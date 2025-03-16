@@ -92,15 +92,24 @@ ol {
   /* o cover, dependiendo de tus necesidades */
   
 }
-
-@media (max-width: 330px) {
-  body {
-    max-width: 100%;
-  }
-  .header {
-    width:100vw; /* Ocupa todo el ancho de la pantalla */
-    padding: 0 10px; /* Ajusta el padding para que se vea correctamente */
+@media (max-width: 320px) {
+  .header{
+    width: 100%;
     
   }
+  .contenedor-video video {
+    max-width: 100%;
+    height: auto;
+  }
+  .menu {
+    flex-direction: column;
+    padding: 5px; /* Reduce el padding para aprovechar mejor el espacio */
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 10px; /* Espaciado adecuado entre ítems */
+    align-items: center;
+  }
+  
 }
-@media (min-width: 769px) and (max-width: 1024px) {}
