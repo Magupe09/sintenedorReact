@@ -36,6 +36,7 @@ ol {
 }
 
 .header {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,21 +50,32 @@ ol {
 }
 
 .menu {
-  background-color: white;
+  background-color: transparent;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
   padding: 10px;
   width: 100%;
-
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50px;
 }
 
 .menu ul li {
   margin-bottom: 20px;
 
 }
+.menu ul li:hover{
+  background-color: white;
+  border-radius: 10px;
+}
 
 .menu ul li a {
+  color: white;
+  font-size: 1.5rem;
+}
+.menu ul li a:hover{
   color: black;
 }
 
@@ -72,14 +84,20 @@ ol {
   justify-content: center;
   align-items: self-end;
   gap: 20px;
-
+  
 
 }
 
 .carrito-icono {
-  width: 50px;
+  width: 40px;
+  fill: white;
+  transition: fill 0.3s ease;
+}
+
+.menu ul li:hover .carrito-icono {
   fill: black;
 }
+
 .contenedor-video{
   margin-top: 0px;
 }
@@ -91,6 +109,75 @@ ol {
   object-fit: cover;
   /* o cover, dependiendo de tus necesidades */
   
+}
+.boton-hamburguesa{
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  padding: 8px;
+  cursor: pointer;
+}
+.boton-hamburguesa span{
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  transition: all 0.3s ease;
+  margin: 2px 0;
+}
+
+@media (max-width: 768px) {
+  .boton-hamburguesa{
+    display: block;
+    position: absolute;
+    top: 90vh;
+    right: 10px;
+  }
+   .nav.oculto{
+    opacity: 0;
+    pointer-events: none;
+    display: none; /* Agregamos !important temporalmente para debugging */
+    
+  }
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* o el color que prefieras */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    height: 100vh; /* ocupa toda la altura de la pantalla */
+    transition: opacity 0.3s ease;
+    opacity: 1;
+  }
+  .nav li {
+    width: 100%;  /* Ocupa todo el ancho */
+    text-align: center;  /* Centra el texto */
+    padding: 15px 0;  /* Espacio vertical para hacer el área clickeable más grande */
+    transition: all 0.3s ease;  /* Transición suave para el hover */
+  }
+
+  .nav li:hover {
+    background-color: rgba(255, 255, 255, 0.1);  /* Un fondo más sutil */
+    transform: scale(1.05);  /* Un pequeño efecto de escala */
+  }
+
+  .nav li a {
+    display: block;  /* Hace que todo el li sea clickeable */
+    width: 100%;
+    padding: 10px 20px;  /* Más espacio alrededor del texto */
+  }
+  .carrito-icono:hover{
+    fill: black;
+  }
+ 
 }
 @media (max-width: 320px) {
   .header{
