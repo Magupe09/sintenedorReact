@@ -20,7 +20,6 @@ body {
   margin: 0 auto;
   color: white;
   background-color: red;
-
 }
 
 a {
@@ -44,9 +43,6 @@ ol {
   width: 100%;
   height: auto;
   color: white;
-
-  
-
 }
 
 .menu {
@@ -64,9 +60,9 @@ ol {
 
 .menu ul li {
   margin-bottom: 20px;
-
 }
-.menu ul li:hover{
+
+.menu ul li:hover {
   background-color: white;
   border-radius: 10px;
 }
@@ -75,7 +71,8 @@ ol {
   color: white;
   font-size: 1.5rem;
 }
-.menu ul li a:hover{
+
+.menu ul li a:hover {
   color: black;
 }
 
@@ -84,8 +81,6 @@ ol {
   justify-content: center;
   align-items: self-end;
   gap: 20px;
-  
-
 }
 
 .carrito-icono {
@@ -98,19 +93,17 @@ ol {
   fill: black;
 }
 
-.contenedor-video{
+.contenedor-video {
   margin-top: 0px;
 }
 
 .video {
-
   max-width: 100%;
   max-height: 100%;
   object-fit: cover;
-  /* o cover, dependiendo de tus necesidades */
-  
 }
-.boton-hamburguesa{
+
+.boton-hamburguesa {
   display: none;
   flex-direction: column;
   justify-content: space-between;
@@ -120,7 +113,8 @@ ol {
   padding: 8px;
   cursor: pointer;
 }
-.boton-hamburguesa span{
+
+.boton-hamburguesa span {
   display: block;
   height: 3px;
   width: 100%;
@@ -130,33 +124,35 @@ ol {
 }
 
 @media (max-width: 768px) {
-  .boton-hamburguesa{
+  .boton-hamburguesa {
     display: block;
     position: absolute;
     top: 90vh;
     right: 10px;
   }
-   .nav.oculto{
-    opacity: 0;
-    pointer-events: none;
-    display: none; /* Agregamos !important temporalmente para debugging */
-    
-  }
+
   .nav {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.9); /* o el color que prefieras */
+    background-color: rgba(0, 0, 0, 0.9);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     padding: 20px;
-    height: 100vh; /* ocupa toda la altura de la pantalla */
+    height: 100vh;
     transition: opacity 0.3s ease;
     opacity: 1;
   }
+
+  .nav.oculto {
+    opacity: 0;
+    pointer-events: none;
+    display: none;
+  }
+
   .nav li {
     width: 100%;  /* Ocupa todo el ancho */
     text-align: center;  /* Centra el texto */
@@ -174,29 +170,30 @@ ol {
     width: 100%;
     padding: 10px 20px;  /* Más espacio alrededor del texto */
   }
-  .carrito-icono:hover{
+
+  .carrito-icono:hover {
     fill: black;
   }
- 
 }
+
 @media (max-width: 320px) {
-  .header{
+  .header {
     width: 100%;
-    
   }
+
   .contenedor-video video {
     max-width: 100%;
     height: auto;
   }
+
   .menu {
     flex-direction: column;
-    padding: 5px; /* Reduce el padding para aprovechar mejor el espacio */
+    padding: 5px;
   }
 
   .nav {
     flex-direction: column;
-    gap: 10px; /* Espaciado adecuado entre ítems */
+    gap: 10px;
     align-items: center;
   }
-  
 }
