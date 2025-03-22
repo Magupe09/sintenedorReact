@@ -11,7 +11,7 @@ function Navbar() {
                 <video className='video' src={video} autoPlay loop muted></video>
             </div>
             <nav className='menu'>
-                <ul className={`nav ${menuVisible ? 'oculto' : ''}`}>
+                <ul className={`nav ${!menuVisible ? 'oculto' : ''}`}>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#menu">Menù</a></li>
                     <li><a href="#carrito">
