@@ -5,6 +5,7 @@ import './style.css';
 
 function Navbar() {
     const [menuVisible, setMenuVisible] = useState(false);
+     console.log(menuVisible);
     return (
         <header className="header">
             <div className='contenedor-video'>
@@ -21,7 +22,7 @@ function Navbar() {
                         </a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
-                <button onClick={() => setMenuVisible(!menuVisible)} className="boton-hamburguesa">
+                <button onClick={() => setMenuVisible(!menuVisible)}  className={`boton-hamburguesa ${menuVisible ? 'activo' : ''}`} >
                     <span></span>
                     <span></span>
                     <span></span>

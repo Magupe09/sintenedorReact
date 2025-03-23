@@ -35,6 +35,17 @@ function Menu() {
                     )
                 })}
             </div>
+            {modalVisible && (
+                <div className="modal-overlay">
+                    <div className="modal-content">
+                        <h3>{pizzaSeleccionada.nombre}</h3>
+                        <img src={pizzaSeleccionada.imagen} alt={pizzaSeleccionada.nombre} />
+                        <p>{pizzaSeleccionada.ingredientes.join(', ')}</p>
+                        <p>Precio: ${precioActual}</p>
+                        <button onClick={()=>setModalVisible(false)}>Cerrar</button>
+                    </div>
+                </div>
+            )}
         </section>
     );
 }

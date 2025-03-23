@@ -124,7 +124,7 @@ ol {
   width: 100%;
   background-color: white;
   transition: all 0.3s ease;
-  margin: 2px 0;
+  margin: 4px 0;
 }
 
 @media (max-width: 768px) {
@@ -133,7 +133,30 @@ ol {
     position:fixed ;
     top: 90vh;
     right: 5px;
+    
   }
+
+  .boton-hamburguesa.activo span {
+    position: absolute;
+    transform-origin: center;
+    margin: 0;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .boton-hamburguesa.activo span:nth-child(1) {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  .boton-hamburguesa.activo span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .boton-hamburguesa.activo span:nth-child(3) {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
 
   .nav {
     position: fixed;
