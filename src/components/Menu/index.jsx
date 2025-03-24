@@ -8,29 +8,47 @@ import { useState } from 'react';
 
 function Menu() {
     //Declaracion de estados
-    const [modalVisible,setModalVisible]= useState(false);
-    const [pizzaSeleccionada,setPizzaSeleccionada]= useState(null);
-    const [tamañoSeleccionado,setTamañoSeleccionado]= useState('personal');
-    const [precioActual,setPrecioActual]=useState(10);
+    const [modalVisible, setModalVisible] = useState(false);
+    const [pizzaSeleccionada, setPizzaSeleccionada] = useState(null);
+    const [tamañoSeleccionado, setTamañoSeleccionado] = useState('personal');
+    const [cantidad, setCantidad] = useState(1);
+    const [precioActual, setPrecioActual] = useState(tamañoSeleccionado);
+
     // Declaracion de la funcion handlePizzaclick
-    const handlePizzaClick=(pizza)=>{
+    const handlePizzaClick = (pizza) => {
         setPizzaSeleccionada(pizza);
         setModalVisible(true);
         setPrecioActual(pizza.precios[tamañoSeleccionado]);
         console.log(pizza);
     }
+    const handleSizeSelect = (size) => {
+        setTamañoSeleccionado(size);
+        setPrecioActual(pizzaSeleccionada.precios[size]);
+    };
+
     const pizzas = getPizzasArray();
+
+    const handleAgregarAlCarrito = () => {
+        console.log('Agregar al carrito');
+        const item = [{
+            id: pizzaSeleccionada.id,
+            nombre: pizzaSeleccionada.nombre,
+            precio: precioActual * cantidad,
+            cantidad: cantidad
+        }]
+        console.log(item);
+    }
     return (
         <section className="menu-section">
             <h2>Nuestro Menú</h2>
             <div className="menu-grid">
-                {pizzas.map((pizza)=>{
-                    return(
-                        <div onClick={()=>handlePizzaClick(pizza)} className="pizza-card" key={pizza.id}>
+                {pizzas.map((pizza) => {
+                    return (
+                        <div onClick={() => handlePizzaClick(pizza)} className="pizza-card" key={pizza.id}>
                             <h3>{pizza.nombre}</h3>
                             <img src={pizza.imagen} alt={pizza.nombre} />
-                            
-                            
+
+
                         </div>
                     )
                 })}
@@ -41,9 +59,28 @@ function Menu() {
                         <h3>{pizzaSeleccionada.nombre}</h3>
                         <img src={pizzaSeleccionada.imagen} alt={pizzaSeleccionada.nombre} />
                         <p>{pizzaSeleccionada.ingredientes.join(', ')}</p>
+                        <div className="size-buttons">
+                            <button 
+                            className={tamañoSeleccionado === 'personal' ? 'active' : ''} 
+                             onClick={() => handleSizeSelect('personal')}>Personal $10</button>
+                            <button
+                            className={tamañoSeleccionado === 'mediana' ? 'active' : ''} 
+                             onClick={() => handleSizeSelect('mediana')}>Mediana $15</button>
+                            <button 
+                            className={tamañoSeleccionado === 'familiar' ? 'active' : ''} 
+                             onClick={() => handleSizeSelect('familiar')}>Familiar $20</button>
+                        </div>
                         <p>Precio: ${precioActual}</p>
-                        <button onClick={()=>setModalVisible(false)}>Cerrar</button>
+                        <div className="quantity-controls">
+                            <button onClick={() => cantidad > 1 && setCantidad(cantidad - 1)}>-</button>
+                            <span>{cantidad}</span>
+                            <button onClick={() => setCantidad(cantidad + 1)}>+</button>
+                        </div>
+                        <button className='add-to-cart-button' onClick={handleAgregarAlCarrito}>Agregar al carrito</button>
+                        <button className='close-button' onClick={() => setModalVisible(false)}>Cerrar</button>
+
                     </div>
+
                 </div>
             )}
         </section>
