@@ -73,7 +73,7 @@ function Menu() {
                         <p>Precio: ${precioActual}</p>
                         <div className="quantity-controls">
                             <button onClick={() => cantidad > 1 && setCantidad(cantidad - 1)}>-</button>
-                            <span>{cantidad}</span>
+                            <span className='quantity-number'>{cantidad}</span>
                             <button onClick={() => setCantidad(cantidad + 1)}>+</button>
                         </div>
                         <button className='add-to-cart-button' onClick={handleAgregarAlCarrito}>Agregar al carrito</button>
