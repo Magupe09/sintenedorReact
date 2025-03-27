@@ -1,7 +1,9 @@
 import React from 'react';
+import { useContext } from 'react';
 import './style.css';
 import { getPizzasArray } from '../../data/pizzasData';
 import { useState } from 'react';
+import { CarritoContext } from '../../context/CarritoContext';
 
 
 
@@ -13,30 +15,41 @@ function Menu() {
     const [tamañoSeleccionado, setTamañoSeleccionado] = useState('personal');
     const [cantidad, setCantidad] = useState(1);
     const [precioActual, setPrecioActual] = useState(tamañoSeleccionado);
+    //Declaracion de context
+    const { agregarAlCarrito } = useContext(CarritoContext);
 
     // Declaracion de la funcion handlePizzaclick
     const handlePizzaClick = (pizza) => {
         setPizzaSeleccionada(pizza);
         setModalVisible(true);
         setPrecioActual(pizza.precios[tamañoSeleccionado]);
-        console.log(pizza);
+       
     }
     const handleSizeSelect = (size) => {
+        console.log('Tamaño seleccionado:', size);
+        console.log('Pizza seleccionada:', pizzaSeleccionada);
         setTamañoSeleccionado(size);
-        setPrecioActual(pizzaSeleccionada.precios[size]);
+        if (pizzaSeleccionada) {
+            setPrecioActual(pizzaSeleccionada.precios[size]);
+        } else {
+            console.error('No hay pizza seleccionada');
+        }
     };
 
     const pizzas = getPizzasArray();
 
     const handleAgregarAlCarrito = () => {
-        console.log('Agregar al carrito');
-        const item = [{
+        console.log('Agregar al carrito,hey');
+        console.log('Pizza seleccionada: hey', pizzaSeleccionada);
+        const item = {
             id: pizzaSeleccionada.id,
             nombre: pizzaSeleccionada.nombre,
             precio: precioActual * cantidad,
             cantidad: cantidad
-        }]
-        console.log(item);
+        }
+        agregarAlCarrito(item);
+        console.log('item agregado', item);
+        
     }
     return (
         <section className="menu-section">
