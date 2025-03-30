@@ -26,8 +26,8 @@ function Menu() {
        
     }
     const handleSizeSelect = (size) => {
-        console.log('Tamaño seleccionado:', size);
-        console.log('Pizza seleccionada:', pizzaSeleccionada);
+        //console.log('Tamaño seleccionado:', size);
+        //console.log('Pizza seleccionada:', pizzaSeleccionada);
         setTamañoSeleccionado(size);
         if (pizzaSeleccionada) {
             setPrecioActual(pizzaSeleccionada.precios[size]);
@@ -39,8 +39,8 @@ function Menu() {
     const pizzas = getPizzasArray();
 
     const handleAgregarAlCarrito = () => {
-        console.log('Agregar al carrito,hey');
-        console.log('Pizza seleccionada: hey', pizzaSeleccionada);
+       // console.log('Agregar al carrito,hey');
+        //console.log('Pizza seleccionada: hey', pizzaSeleccionada);
         const item = {
             id: pizzaSeleccionada.id,
             nombre: pizzaSeleccionada.nombre,
@@ -48,7 +48,7 @@ function Menu() {
             cantidad: cantidad
         }
         agregarAlCarrito(item);
-        console.log('item agregado', item);
+        //console.log('item agregado', item);
         
     }
     return (
