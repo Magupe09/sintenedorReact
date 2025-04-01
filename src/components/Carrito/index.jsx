@@ -15,10 +15,12 @@ function Carrito() {
                 ) : (
                     carrito.map((item, index) => (
                         <div key={index} className="item-carrito">
+                            {console.log(item, 'item')}
                             <h3>{item.nombre}</h3>
+                            <img src={item.imagen} alt={item.nombre} />
                             <p>Tamaño: {item.tamaño}</p>
                             <p>Cantidad: {item.cantidad}</p>
-                            <p>Precio Total: ${item.precioTotal}</p>
+                            <p>Precio Total: ${item.precio}</p>
                         </div>
                     ))
                 )}

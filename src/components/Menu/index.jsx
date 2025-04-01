@@ -43,12 +43,14 @@ function Menu() {
         //console.log('Pizza seleccionada: hey', pizzaSeleccionada);
         const item = {
             id: pizzaSeleccionada.id,
+            imagen: pizzaSeleccionada.imagen,
             nombre: pizzaSeleccionada.nombre,
+            tamaño: tamañoSeleccionado,
             precio: precioActual * cantidad,
             cantidad: cantidad
         }
         agregarAlCarrito(item);
-        //console.log('item agregado', item);
+        console.log('item agregado', item);
         
     }
     return (
