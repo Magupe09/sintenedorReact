@@ -3,7 +3,7 @@ import './style.css';
 import { useCarrito } from '../../context/CarritoContext';
 
 function Carrito() {
-    const { carrito, cerrarModal, modalAbierto } = useCarrito();
+    const { carrito, cerrarModal, modalAbierto, eliminarDelCarrito } = useCarrito();
 
     return (
         <div className={`modal ${modalAbierto ? "mostrar" : ""}`}>
@@ -21,6 +21,7 @@ function Carrito() {
                             <p>Tamaño: {item.tamaño}</p>
                             <p>Cantidad: {item.cantidad}</p>
                             <p>Precio Total: ${item.precio}</p>
+                            <button onClick={eliminarDelCarrito}>Eliminar</button>
                         </div>
                     ))
                 )}

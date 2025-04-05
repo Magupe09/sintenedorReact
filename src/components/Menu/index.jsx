@@ -47,6 +47,7 @@ function Menu() {
             nombre: pizzaSeleccionada.nombre,
             tamaño: tamañoSeleccionado,
             precio: precioActual * cantidad,
+            precioUnitario: precioActual,
             cantidad: cantidad
         }
         agregarAlCarrito(item);
