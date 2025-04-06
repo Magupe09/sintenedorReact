@@ -51,7 +51,7 @@ function Menu() {
             cantidad: cantidad
         }
         agregarAlCarrito(item);
-        console.log('item agregado', item);
+        //console.log('item agregado', item);
         
     }
     return (

@@ -29,10 +29,34 @@ export const CarritoProvider = ({ children }) => {
           setCarrito([...carrito, item]);  // Agrega un nuevo item al carrito
         }
       };
+      const eliminarDelCarrito = (itemAEliminar) => {
+        const nuevoCarrito = carrito.map(item => {
+          if (item.nombre === itemAEliminar.nombre && item.tamaño === itemAEliminar.tamaño) {
+            if (item.cantidad > 1) {
+              return {
+                ...item,
+                cantidad: item.cantidad - 1,
+                precioTotal: item.precioTotal - item.precioUnitario,
+              };
+            } else {
+              return null; // marcamos para eliminar
+            }
+          }
+          return item;
+        }).filter(Boolean); // eliminamos los null
       
+        setCarrito(nuevoCarrito);
+      };
+      const vaciarCarrito = () => setCarrito([]);
+
+      const irPago= ()=>{
+        console.log('Redirigiendo al banco Gracias por tu compra')
+        vaciarCarrito();
+        cerrarModal()
+      }
 
     return (
-        <CarritoContext.Provider value={{ carrito, agregarAlCarrito,  modalAbierto, abrirModal, cerrarModal}}>
+        <CarritoContext.Provider value={{ carrito,setCarrito, agregarAlCarrito, eliminarDelCarrito, irPago, modalAbierto, abrirModal, cerrarModal}}>
             {children}
         </CarritoContext.Provider>
     )

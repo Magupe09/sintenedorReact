@@ -3,7 +3,7 @@ import './style.css';
 import { useCarrito } from '../../context/CarritoContext';
 
 function Carrito() {
-    const { carrito, cerrarModal, modalAbierto, eliminarDelCarrito } = useCarrito();
+    const { carrito, cerrarModal, modalAbierto, eliminarDelCarrito, irPago } = useCarrito();
 
     return (
         <div className={`modal ${modalAbierto ? "mostrar" : ""}`}>
@@ -15,16 +15,21 @@ function Carrito() {
                 ) : (
                     carrito.map((item, index) => (
                         <div key={index} className="item-carrito">
-                            {console.log(item, 'item')}
-                            <h3>{item.nombre}</h3>
-                            <img src={item.imagen} alt={item.nombre} />
+                            <div className="info-principal">
+                                <h3>{item.nombre}</h3>
+                                <img src={item.imagen} alt={item.nombre} />
+                            </div>
                             <p>Tamaño: {item.tamaño}</p>
                             <p>Cantidad: {item.cantidad}</p>
                             <p>Precio Total: ${item.precio}</p>
-                            <button onClick={eliminarDelCarrito}>Eliminar</button>
+                            <button className='boton' onClick={() => eliminarDelCarrito(item)}>Eliminar</button>
+
+
                         </div>
                     ))
+
                 )}
+                <button  className='boton' onClick={() => irPago()}>PAGAR</button>
             </div>
         </div>
     );
