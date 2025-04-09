@@ -15,7 +15,7 @@
 }
 
 .modal-contenido {
-  background: white;
+  background: black;
   padding: 20px;
   border-radius: 8px;
   max-width: 500px;
@@ -25,12 +25,22 @@
   color: black;
   overflow: auto;
 }
+.modal-contenido h2{
+  color: white;
+}
 
 .item-carrito {
+  background-color: black;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
+  color: white;
+  background: black;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 1.37);
+  backdrop-filter: blur(4px);
+  border-radius: 12px;
 }
 
 .item-carrito img {
@@ -38,6 +48,10 @@
   height: 90px;
   object-fit: cover;
   border-radius: 50%;
+}
+
+.info-principal h3 {
+  text-align: center;
 }
 
 .cerrar-modal {
@@ -62,25 +76,42 @@
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
 }
-.boton:hover{
+
+.boton:hover {
   background-color: #e64a19;
   transform: scale(1.03);
 }
-.boton:active{
+
+.boton:active {
   transform: scale(0.97);
 }
-.boton:disabled{
+
+.boton:disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
 
 @media (max-width: 680px) {
-  .boton{
+  .boton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     font-size: 0.8rem;
+    width: 70px;
+    height: 30px;
   }
+
   .item-carrito {
-    background-color: red;
+    background-color: black;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -91,6 +122,10 @@
     align-items: flex-start;
     text-align: left;
     margin-right: 1rem;
+    color: white;
+  }
+  .item-carrito  p{
+    color: white;
   }
 
   .info-principal img {
@@ -104,7 +139,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    
+
   }
 
   .info-principal {

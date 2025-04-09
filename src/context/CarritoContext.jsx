@@ -19,7 +19,7 @@ export const CarritoProvider = ({ children }) => {
           // Si la pizza ya está en el carrito, incrementa la cantidad
           const carritoActualizado = carrito.map(pizza => {
             if (pizza.nombre === item.nombre && pizza.tamaño === item.tamaño) {
-              return { ...pizza, cantidad: pizza.cantidad + 1 };  // Incrementa la cantidad
+              return { ...pizza, cantidad: pizza.cantidad + 1,precio: pizza.precio + item.precioUnitario};  // Incrementa la cantidad
             }
             return pizza;  // Si no es la pizza que encontramos, la dejamos igual
           });
@@ -36,7 +36,7 @@ export const CarritoProvider = ({ children }) => {
               return {
                 ...item,
                 cantidad: item.cantidad - 1,
-                precioTotal: item.precioTotal - item.precioUnitario,
+                precio: item.precio - item.precioUnitario,
               };
             } else {
               return null; // marcamos para eliminar
@@ -56,7 +56,7 @@ export const CarritoProvider = ({ children }) => {
       }
 
     return (
-        <CarritoContext.Provider value={{ carrito,setCarrito, agregarAlCarrito, eliminarDelCarrito, irPago, modalAbierto, abrirModal, cerrarModal}}>
+        <CarritoContext.Provider value={{ carrito,vaciarCarrito, agregarAlCarrito, eliminarDelCarrito, irPago, modalAbierto, abrirModal, cerrarModal}}>
             {children}
         </CarritoContext.Provider>
     )
