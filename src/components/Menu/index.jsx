@@ -15,6 +15,9 @@ function Menu() {
     const [tamañoSeleccionado, setTamañoSeleccionado] = useState('personal');
     const [cantidad, setCantidad] = useState(1);
     const [precioActual, setPrecioActual] = useState(tamañoSeleccionado);
+   
+
+
     //Declaracion de context
     const { agregarAlCarrito } = useContext(CarritoContext);
 
@@ -92,7 +95,8 @@ function Menu() {
                             <span className='quantity-number'>{cantidad}</span>
                             <button onClick={() => setCantidad(cantidad + 1)}>+</button>
                         </div>
-                        <button className='add-to-cart-button' onClick={handleAgregarAlCarrito}>Agregar al carrito</button>
+                        <button  className='add-to-cart-button' onClick={handleAgregarAlCarrito}>Agregar al carrito</button>
+                        <div id="contenedor-animacion"></div>
                         <button className='close-button' onClick={() => setModalVisible(false)}>Cerrar</button>
 
                     </div>

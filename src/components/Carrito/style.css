@@ -12,6 +12,7 @@
 
 .modal.mostrar {
   display: flex;
+  background-color: chartreuse;
 }
 
 .modal-contenido {
@@ -66,7 +67,8 @@
 }
 
 .boton {
-  padding: 0.6rem 1.2rem;
+  padding: 0.6rem 0.5rem;
+  margin-right: 10px;
   background-color: #ff5722;
   color: #fff;
   font-size: 1rem;
@@ -76,7 +78,7 @@
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 100px;
+  width: 80px;
   height: 30px;
   display: flex;
   justify-content: center;
