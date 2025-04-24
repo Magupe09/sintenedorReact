@@ -10,12 +10,13 @@ import { CarritoContext } from '../../context/CarritoContext';
 
 function Menu() {
     //Declaracion de estados
+    const [animationKey, setAnimationKey] = React.useState(0)
     const [modalVisible, setModalVisible] = useState(false);
     const [pizzaSeleccionada, setPizzaSeleccionada] = useState(null);
     const [tamañoSeleccionado, setTamañoSeleccionado] = useState('personal');
     const [cantidad, setCantidad] = useState(1);
     const [precioActual, setPrecioActual] = useState(tamañoSeleccionado);
-   
+
 
 
     //Declaracion de context
@@ -26,7 +27,7 @@ function Menu() {
         setPizzaSeleccionada(pizza);
         setModalVisible(true);
         setPrecioActual(pizza.precios[tamañoSeleccionado]);
-       
+
     }
     const handleSizeSelect = (size) => {
         //console.log('Tamaño seleccionado:', size);
@@ -42,7 +43,7 @@ function Menu() {
     const pizzas = getPizzasArray();
 
     const handleAgregarAlCarrito = () => {
-       // console.log('Agregar al carrito,hey');
+        // console.log('Agregar al carrito,hey');
         //console.log('Pizza seleccionada: hey', pizzaSeleccionada);
         const item = {
             id: pizzaSeleccionada.id,
@@ -55,7 +56,8 @@ function Menu() {
         }
         agregarAlCarrito(item);
         //console.log('item agregado', item);
-        
+        setAnimationKey(prevKey => prevKey + 1);
+
     }
     return (
         <section className="menu-section">
@@ -79,15 +81,15 @@ function Menu() {
                         <img src={pizzaSeleccionada.imagen} alt={pizzaSeleccionada.nombre} />
                         <p>{pizzaSeleccionada.ingredientes.join(', ')}</p>
                         <div className="size-buttons">
-                            <button 
-                            className={tamañoSeleccionado === 'personal' ? 'active' : ''} 
-                             onClick={() => handleSizeSelect('personal')}>Personal $10</button>
                             <button
-                            className={tamañoSeleccionado === 'mediana' ? 'active' : ''} 
-                             onClick={() => handleSizeSelect('mediana')}>Mediana $15</button>
-                            <button 
-                            className={tamañoSeleccionado === 'familiar' ? 'active' : ''} 
-                             onClick={() => handleSizeSelect('familiar')}>Familiar $20</button>
+                                className={tamañoSeleccionado === 'personal' ? 'active' : ''}
+                                onClick={() => handleSizeSelect('personal')}>Personal $10</button>
+                            <button
+                                className={tamañoSeleccionado === 'mediana' ? 'active' : ''}
+                                onClick={() => handleSizeSelect('mediana')}>Mediana $15</button>
+                            <button
+                                className={tamañoSeleccionado === 'familiar' ? 'active' : ''}
+                                onClick={() => handleSizeSelect('familiar')}>Familiar $20</button>
                         </div>
                         <p>Precio: ${precioActual}</p>
                         <div className="quantity-controls">
@@ -95,8 +97,16 @@ function Menu() {
                             <span className='quantity-number'>{cantidad}</span>
                             <button onClick={() => setCantidad(cantidad + 1)}>+</button>
                         </div>
-                        <button  className='add-to-cart-button' onClick={handleAgregarAlCarrito}>Agregar al carrito</button>
-                        <div id="contenedor-animacion"></div>
+                        <button className='add-to-cart-button' onClick={handleAgregarAlCarrito}>Agregar al carrito
+                            {/* Renderiza el símbolo animado si animationKey es > 0 */}
+                            {animationKey > 0 && (
+                                <span key={animationKey} className="plus-animation">
+                                    +
+                                </span>
+                            )}
+
+                        </button>
+
                         <button className='close-button' onClick={() => setModalVisible(false)}>Cerrar</button>
 
                     </div>

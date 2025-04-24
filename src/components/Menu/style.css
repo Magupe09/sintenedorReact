@@ -137,7 +137,7 @@
     cursor: pointer;
 }
 .size-buttons button:hover {
-    background-color: red;
+    background-color: white;
     color: black;
 }
 .add-to-cart-button {
@@ -150,7 +150,7 @@
     
 }
 .add-to-cart-button:hover {
-    background-color: red;
+    background-color: white;
     color: black;
    
 }
@@ -172,13 +172,13 @@
     color: white;
 }
 .quantity-controls button:hover {
-    background-color: red;
+    background-color: white;
     color: black;
     transition: background-color 0.3s ease; 
 }
 .size-buttons button.active {
-    background-color: #007bff; /* Cambia el color de fondo */
-    color: white; /* Cambia el color del texto */
+    background-color: white; /* Cambia el color de fondo */
+    color: black; /* Cambia el color del texto */
     border: 2px solid #0056b3; /* Agrega un borde */
 }
 @media (max-width: 768px) {
@@ -290,3 +290,26 @@
         width: 100%;
     }
 }
+/* En tu archivo CSS */
+.plus-animation {
+    position: absolute; /* Posiciona el símbolo respecto al botón (si el botón tiene position: relative) */
+    font-size: 2.2em;
+    color: red; /* O el color que quieras */
+    pointer-events: none; /* Para que no bloquee clics */
+    animation: floatAndFade 0.8s ease-out forwards; /* Nombre de la animación, duración, timing function, forwards para mantener estado final */
+  }
+  
+  @keyframes floatAndFade {
+    0% {
+      opacity: 1;
+      transform: translate(0, 0); /* Empieza en la posición original */
+    }
+    50% {
+      opacity: 1;
+      transform: translate(0, -100px); /* Se mueve hacia arriba 20px */
+    }
+    100% {
+      opacity: 0; /* Se desvanece */
+      transform: translate(0, -100px); /* Termina más arriba */
+    }
+  }
