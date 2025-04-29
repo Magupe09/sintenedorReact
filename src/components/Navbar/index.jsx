@@ -3,6 +3,7 @@ import video from '../../assets/videPizza.mp4';
 import { useState } from 'react';
 import './style.css';
 import { useCarrito } from '../../context/CarritoContext';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
     const [menuVisible, setMenuVisible] = useState(false);
@@ -18,8 +19,8 @@ function Navbar() {
             <nav className='menu'>
 
                 <ul className={`nav ${!menuVisible ? 'oculto' : ''}`}>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#menu">Menù</a></li>
+                    <li><Link to="/">Home</Link></li> 
+                    <li><Link to="/Menu">Menú</Link></li>
                     <li><a href="#carrito" onClick={(e) => {
                         e.preventDefault();
                         abrirModal();

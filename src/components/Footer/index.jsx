@@ -14,16 +14,7 @@ const Footer = () => {
             <li>Correo electrónico: <a href="mailto:info@pizzeria.com">info@pizzeria.com</a></li>
           </ul>
         </div>
-        {/* Sección de enlaces útiles */}
-        <div className="footer-enlaces">
-          <h4>Enlaces útiles</h4>
-          <ul>
-            <li><a href="/sobre-nosotros">Sobre nosotros</a></li>
-            <li><a href="/preguntas-frecuentes">Preguntas frecuentes</a></li>
-            <li><a href="/politica-de-privacidad">Política de privacidad</a></li>
-            <li><a href="/terminos-de-servicio">Términos de servicio</a></li>
-          </ul>
-        </div>
+        
         {/* Sección de redes sociales */}
         <div className="footer-redes">
           <h4>Síguenos</h4>
@@ -35,7 +26,7 @@ const Footer = () => {
         </div>
          {/* Sección de certificaciones y seguridad */}
          <div className="footer-seguridad">
-          <h4>Seguridad y certificaciones</h4>
+          <h4>certificaciones</h4>
           <ul>
             <li><img src="logo-ssl.png" alt="SSL" /></li>
             <li><img src="logo-paypal.png" alt="PayPal" /></li>
@@ -43,7 +34,7 @@ const Footer = () => {
         </div>
         {/* Copyright y derechos de autor */}
       <div className="footer-copyright">
-        <p>&copy; {new Date().getFullYear()} Pizzería. Todos los derechos reservados.</p>
+        <p>&copy; {new Date().getFullYear()} Sintenedor. Todos los derechos reservados.</p>
       </div>
     </footer>
   );
