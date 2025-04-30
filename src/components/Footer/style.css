@@ -2,8 +2,9 @@
     display: flex;
     justify-content: center;
     align-items: start;
-    gap: 24px;
+    gap: 60px;
     height: 100px;
+    padding: 10px;
 }
 @media(max-width: 648px ) {
     .footer div h4{

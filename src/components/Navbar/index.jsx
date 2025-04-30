@@ -19,8 +19,8 @@ function Navbar() {
             <nav className='menu'>
 
                 <ul className={`nav ${!menuVisible ? 'oculto' : ''}`}>
-                    <li><Link to="/">Home</Link></li> 
-                    <li><Link to="/Menu">Menú</Link></li>
+                   
+                    <li><a href="#menu-section">Menú</a></li>
                     <li><a href="#carrito" onClick={(e) => {
                         e.preventDefault();
                         abrirModal();

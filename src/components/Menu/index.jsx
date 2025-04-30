@@ -60,7 +60,7 @@ function Menu() {
 
     }
     return (
-        <section className="menu-section">
+        <section id="menu-section" className="menu-section">
             <h2>Nuestro Menú</h2>
             <div className="menu-grid">
                 {pizzas.map((pizza) => {
