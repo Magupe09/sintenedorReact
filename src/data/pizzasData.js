@@ -1,8 +1,15 @@
+import marineraImg from '../assets/marinera.webp';
+import peperoniImg from '../assets/peperoni.webp';
+import cuatroQuesosImg from '../assets/cuatro-quesos.webp';
+import barbacoaImg from '../assets/barbacoa.webp';
+import hawainaImg from '../assets/hawaina.webp';
+import vegetarianaImg from '../assets/vegetariana.webp';
+
 export const pizzasData = {
   marinera: {
     id: 'marinera',
     nombre: "Marinera",
-    imagen: "/src/assets/marinera.webp",
+    imagen: marineraImg,
     ingredientes: ["Tomate", "Mozzarella", "Albahaca fresca"],
     precios: {
       personal: 10,
@@ -13,7 +20,7 @@ export const pizzasData = {
   pepperoni: {
     id: 'pepperoni',
     nombre: "Pepperoni",
-    imagen: "/src/assets/peperoni.webp",
+    imagen: peperoniImg,
     ingredientes: ["Tomate", "Mozzarella", "Pepperoni"],
     precios: {
       personal: 10,
@@ -24,7 +31,7 @@ export const pizzasData = {
   quesos: {
     id: 'quesos',
     nombre: "Cuatro Quesos",
-    imagen: "/src/assets/cuatro-quesos.webp",
+    imagen: cuatroQuesosImg,
     ingredientes: ["Mozzarella", "Gorgonzola", "Parmesano", "Ricotta"],
     precios: {
       personal: 10,
@@ -35,7 +42,7 @@ export const pizzasData = {
   barbacoa: {
     id: 'barbacoa',
     nombre: "Barbacoa",
-    imagen: "/src/assets/barbacoa.webp",
+    imagen: barbacoaImg,
     ingredientes: ["Tomate", "Mozzarella", "Carne de res", "Cebolla", "Salsa barbacoa"],
     precios: {
       personal: 10,
@@ -46,7 +53,7 @@ export const pizzasData = {
   hawaiana: {
     id: 'hawaiana',
     nombre: "Hawaiana",
-    imagen: "/src/assets/hawaina.webp",
+    imagen: hawainaImg,
     ingredientes: ["Tomate", "Mozzarella", "Jamón", "Piña"],
     precios: {
       personal: 10,
@@ -57,7 +64,7 @@ export const pizzasData = {
   vegetariana: {
     id: 'vegetariana',
     nombre: "Vegetariana",
-    imagen: "/src/assets/vegetariana.webp",
+    imagen: vegetarianaImg,
     ingredientes: ["Pimientos", "Champiñones", "Cebolla", "Aceitunas"],
     precios: {
       personal: 10,
