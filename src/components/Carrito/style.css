@@ -1,0 +1,165 @@
+.carrito-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1000;
+}
+
+.carrito-container {
+  width: 100%;
+  max-width: 400px;
+  background-color: white;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.carrito-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.carrito-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.cerrar-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.carrito-items {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.carrito-vacio {
+  text-align: center;
+  color: #666;
+  margin-top: 2rem;
+}
+
+.carrito-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.carrito-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.item-info h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.item-info p {
+  margin: 5px 0 0;
+  color: #666;
+}
+
+.item-cantidad {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.item-cantidad button {
+  background: #eee;
+  border: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.item-cantidad span {
+  min-width: 20px;
+  text-align: center;
+}
+
+.eliminar-btn {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.carrito-footer {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.pagar-btn {
+  width: 100%;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.pagar-btn:hover {
+  background: #45a049;
+}
+
+/* Animaciones */
+.carrito-enter {
+  transform: translateX(100%);
+}
+
+.carrito-enter-active {
+  transform: translateX(0);
+  transition: transform 300ms ease-in-out;
+}
+
+.carrito-exit {
+  transform: translateX(0);
+}
+
+.carrito-exit-active {
+  transform: translateX(100%);
+  transition: transform 300ms ease-in-out;
+}
+
+@media (max-width: 480px) {
+  .carrito-container {
+    max-width: 100%;
+  }
+} 

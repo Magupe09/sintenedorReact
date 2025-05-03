@@ -1,0 +1,93 @@
+.menu {
+  padding: 80px 20px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.menu h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+  font-size: 2.5rem;
+}
+
+.pizzas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.pizza-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.pizza-card:hover {
+  transform: translateY(-5px);
+}
+
+.pizza-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.pizza-card h3 {
+  padding: 1rem;
+  margin: 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.pizza-card p {
+  padding: 0 1rem;
+  color: #666;
+  font-size: 0.9rem;
+  min-height: 60px;
+}
+
+.pizza-footer {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f8f8;
+}
+
+.precio {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+button {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background: #ff3333;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    padding: 60px 10px 20px;
+  }
+
+  .menu h2 {
+    font-size: 2rem;
+  }
+
+  .pizzas-grid {
+    grid-template-columns: 1fr;
+  }
+} 
